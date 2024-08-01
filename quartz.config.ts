@@ -54,7 +54,6 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
-      Plugin.Latex({ renderEngine: "katex" }),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "filesystem"],
@@ -71,7 +70,7 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
-      Plugin.Latex({ renderEngine: "katex" }),
+      Plugin.Latex({ renderEngine: "math-jax" }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
